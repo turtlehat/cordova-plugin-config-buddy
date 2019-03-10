@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0" id="cordova-plugin-config-buddy" version="1.0.0">
+	<name>Config Buddy</name>
+	<engines>
+		<engine name="cordova" version=">=3.4.0"/>
+	</engines>
+	<js-module src="www/configbuddy.js" name="configbuddy">
+		<clobbers target="configbuddy" />
+	</js-module>
+	<platform name="android">
+		<config-file target="res/xml/config.xml" parent="/*">
+			<feature name="ConfigBuddy">
+				<param name="android-package" value="com.matadornetwork.configbuddy.ConfigBuddyPlugin"/>
+			</feature>
+		</config-file>
+		<edit-config file="AndroidManifest.xml" target="/manifest/application/activity[@android:name='MainActivity']" mode="merge">
+		    <activity android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale|fontScale" />
+		</edit-config>
+		<source-file src="src/android/ConfigBuddyPlugin.java" target-dir="src/com/matadornetwork/configbuddy/"/>
+	</platform>
+	<platform name="ios">
+		<config-file target="config.xml" parent="/*">
+			<feature name="ConfigBuddy">
+				<param name="ios-package" value="CDVConfigBuddy" />
+			</feature>
+		</config-file>
+		<header-file src="src/ios/CDVConfigBuddy.h" />
+		<source-file src="src/ios/CDVConfigBuddy.m" />
+	</platform>
+</plugin>

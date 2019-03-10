@@ -1,0 +1,25 @@
+{
+  "name": "cordova-plugin-config-buddy",
+  "version": "1.0.0",
+  "description": "None",
+  "cordova": {
+    "id": "com.matadornetwork.configbuddy",
+    "platforms": [
+      "android",
+      "ios"
+    ]
+  },
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-android",
+    "cordova-ios"
+  ],
+  "engines": [
+    {
+      "name": "cordova",
+      "version": ">=3.4.0"
+    }
+  ],
+  "author": "Matador Network",
+  "license": "ISC"
+}
